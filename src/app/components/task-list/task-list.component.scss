@@ -1,0 +1,39 @@
+.list-item {
+  background: #fff;
+  -webkit-transition: background-color .2s ease-out;
+  -moz-transition: background-color .2s ease-out;
+  -o-transition: background-color .2s ease-out;
+  transition: background-color .2s ease-out;
+  border-bottom: 1px solid #f0f3f6;
+  &:hover {
+    background: #f0f3f6;
+  }
+  .item-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    span {
+      flex-grow: 1;
+      cursor: pointer;
+    }
+    .button-wrapper {
+      display: flex;
+      flex-grow: 0;
+      .mat-icon {
+        height: 60px;
+        width: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        cursor: pointer;
+        &.edit-icon {
+          background: #3f51b5;
+        }
+        &.delete-icon {
+          background: #f44336;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <span class="navbar-brand">Task Manager</span>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/tasks">Tasks </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/task/new">Add new task</a>
+      </li>
+    </ul>
+  </div>
+</nav> -->
+
+<nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand">Task manager</a>
+
+    <div class="d-flex">
+      <a mat-button href="/tasks">Tasks</a>
+      <a mat-button href="/task/new"color="primary">New task</a>
+
+      <button mat-button color="warn"  (click)="logOut()">
+        <span class="material-symbols-outlined">
+          logout
+          </span>
+      </button>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,44 @@
+<app-header></app-header>
+
+<div class="container">
+  <div class="row full-height flex-align-center justify-center">
+    <div class="form-wrapper">
+      <form [formGroup]="taskForm" (ngSubmit)="save()" name="taskForm">
+        <mat-form-field class="full-width">
+          <mat-label>Title</mat-label>
+          <input matInput formControlName="title" />
+          @if (taskForm.controls['title'].hasError('required')) {
+            <mat-error>Title is <strong>required</strong></mat-error>
+            }
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Description</mat-label>
+          <textarea matInput formControlName="description"></textarea>
+          @if (taskForm.controls['description'].hasError('required')) {
+            <mat-error>Description is <strong>required</strong></mat-error>
+            }
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Status</mat-label>
+          <mat-select
+            matNativeControl
+            formControlName="status"
+            [(value)]="task().status"
+          >
+            <mat-option value="not-started">Not Started</mat-option>
+            <mat-option value="in-progress">In Progress</mat-option>
+            <mat-option value="completed">Completed</mat-option>
+          </mat-select>
+          @if (taskForm.controls['status'].hasError('required')) {
+            <mat-error>Status is <strong>required</strong></mat-error>
+            }
+        </mat-form-field>
+
+        <button mat-button (click)="cancel()">Cancel</button>
+        <button mat-button color="primary" type="submit" [disabled]="taskForm.invalid">Save</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+

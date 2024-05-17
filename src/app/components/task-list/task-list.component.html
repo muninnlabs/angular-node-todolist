@@ -1,0 +1,37 @@
+<app-header></app-header>
+
+<div class="container">
+  <div class="row full-height mt-40">
+    <mat-list role="list">
+      @for (task of taskList(); track task) {
+      <mat-list-item role="listitem" class="list-item">
+        <div class="item-content">
+            <span class="list-description" (click)="showDetails(task)">
+                {{ task.title }}
+            </span>
+            <span class="button-wrapper">
+              
+              <mat-icon
+                aria-hidden="false"
+                aria-label="Edit task"
+                fontIcon="edit"
+                class="edit-icon"
+                (click)="editTask(task)"
+              ></mat-icon>
+              <mat-icon
+                aria-hidden="false"
+                aria-label="Edit task"
+                fontIcon="delete"
+                class="delete-icon"
+                (click)="deleteTask(task.id!)"
+              ></mat-icon>
+            </span>
+    
+    
+        </div>
+      </mat-list-item>
+    
+      }
+    </mat-list>
+  </div>
+</div>

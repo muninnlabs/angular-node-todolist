@@ -1,0 +1,13 @@
+.register-card{
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  .button-wrapper{
+    button{
+        margin-right: 15px;
+    }
+}
+}

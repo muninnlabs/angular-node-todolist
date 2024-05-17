@@ -1,0 +1,68 @@
+<div class="container-fluid">
+  <div class="row full-height flex-align-center">
+    <mat-card class="login-card">
+      <mat-card-content>
+        <div class="header">
+          <P>Sign Into Your Account </P>
+        </div>
+        <form name="loginForm" [formGroup]="loginForm">
+          <div class="emailInput">
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Email</mat-label>
+              <input
+                formControlName="email"
+                matInput
+                placeholder="Enter email address"
+                required
+              />
+              @if (loginForm.controls['email'].hasError('email') &&
+              !loginForm.controls['email'].hasError('required')) {
+              <mat-error>Please enter a valid email address</mat-error>
+              } @if (loginForm.controls['email'].hasError('required')) {
+              <mat-error>Email is <strong>required</strong></mat-error>
+              }
+            </mat-form-field>
+          </div>
+
+          <div>
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Password</mat-label>
+              <input
+                formControlName="password"
+                matInput
+                type="password"
+                required
+              />
+              @if (loginForm.controls['password'].hasError('required')) {
+              <mat-error>Password is <strong>required</strong></mat-error>
+              } @if (loginForm.controls['password'].hasError('minlength')) {
+              <mat-error
+                >Password must be at least
+                <strong>6 characters</strong></mat-error
+              >
+              }
+            </mat-form-field>
+          </div>
+          <mat-card-actions class="button-wrapper">
+            <button
+              mat-flat-button
+              color="primary"
+              [disabled]="loginForm.invalid"
+              (click)="onLogin()"
+            >
+              Login
+            </button>
+            <button
+              mat-flat-button
+              color="accent"
+              (click)="onRegister()"
+              [disabled]="loginForm.invalid"
+            >
+              create an account
+            </button>
+          </mat-card-actions>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
